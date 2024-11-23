@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3001;
 
 // Middleware
 app.use(bodyParser.json());
+
+const PORT = process.env.PORT || 3001; // Use the environment port or default to 3000
 
 // Example data (in-memory storage)
 let rooms = [];
